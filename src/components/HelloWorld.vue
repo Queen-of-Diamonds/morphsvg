@@ -1,43 +1,51 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      width="800px"
+      height="400px"
+      viewBox="0 0 800 400"
+      style="enable-background: new 0 0 800 400"
+      xml:space="preserve"
+    >
+      >
+      <rect id="background" class="st0" width="800" height="400" />
+      <path
+        id="square"
+        class="st1"
+        d="M525.667,321.333H274.333V78.667h251.333V321.333z"
+      />
+      <path
+        id="star"
+        class="st2"
+        d="M400,82.531l38.168,77.336l85.346,12.401l-61.757,60.198l14.579,85.001L400,277.336l-76.336,40.132
+  l14.579-85.001l-61.757-60.198l85.346-12.401L400,82.531z"
+      />
+    </svg>
   </div>
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+
+gsap.registerPlugin(MorphSVGPlugin);
+console.log("🚀 ~ file: HelloWorld.vue ~ line 38 ~ gsap", gsap)
+
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String
+    msg: String,
+  },
+  mounted() {
+    gsap.to("#square", {duration: 3, morphSVG:{shape:"#star", shapeIndex:5}});
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -55,5 +63,19 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.st0 {
+  fill: #1d1d1d;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+}
+.st1 {
+  fill: #88c540;
+}
+.st2 {
+  fill: none;
+  stroke: #e5285d;
+  stroke-miterlimit: 10;
 }
 </style>
