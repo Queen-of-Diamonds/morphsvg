@@ -1,10 +1,10 @@
 <svg version="1.1" id="alphabet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="800px" height="400px" viewBox="0 0 800 400" style="enable-background:new 0 0 800 400;" xml:space="preserve">
-<style type="text/css">
+<!-- <style type="text/css">
 	.st0{fill:#1D1D1D;}
 	.st1{fill:#89C540;}
 	.st2{fill:#E24B6C;}
-</style>
+</style> -->
 <rect id="background" class="st0" width="800" height="400"/>
 <circle id="circle" class="st1" cx="529.866" cy="199.658" r="42.5"/>
 <rect id="square" x="362.869" y="157.158" class="st1" width="85" height="85"/>
