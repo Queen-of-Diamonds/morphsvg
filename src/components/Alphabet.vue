@@ -3,7 +3,7 @@
     <!-- <inline-svg :src="mySvg" @loaded="onLoaded"></inline-svg> -->
     <svg
       version="1.1"
-      id="Layer_1"
+      id="alphabet"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px"
@@ -72,7 +72,8 @@
 import { gsap } from "gsap";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 // import InlineSvg from "vue-inline-svg";
-// import * as mySvg from "@/alphabet.svg";
+import * as mySvg from "@/alphabet.svg";
+console.log("dvdb - mySvg", mySvg);
 
 gsap.registerPlugin(MorphSVGPlugin);
 
@@ -89,7 +90,7 @@ export default {
     };
   },
   mounted() {
-    setTimeout(this.onLoaded, 2000)
+    setTimeout(this.onLoaded, 2000);
   },
   methods: {
     onLoaded() {
