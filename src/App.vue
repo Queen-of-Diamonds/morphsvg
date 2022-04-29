@@ -1,17 +1,20 @@
 <template>
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <hippo></hippo>
+  <!-- <hippo></hippo> -->
+  <alphabet></alphabet>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import Hippo from './components/Hippo.vue'
+// import Hippo from './components/Hippo.vue'
+import Alphabet from './components/Alphabet.vue'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
-    Hippo,
+    // Hippo,
+    Alphabet,
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hippo">
     <inline-svg :src="mySvg" @loaded="onLoaded"></inline-svg>
   </div>
 </template>
