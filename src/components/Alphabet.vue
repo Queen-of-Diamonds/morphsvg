@@ -3,7 +3,7 @@
     <!-- <inline-svg :src="mySvg" @loaded="onLoaded"></inline-svg> -->
     <svg
       version="1.1"
-      id="Layer_1"
+      id="alphabet"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px"
@@ -71,6 +71,7 @@
 <script>
 import { gsap } from "gsap";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import { SVG } from "@svgdotjs/svg.js";
 // import InlineSvg from "vue-inline-svg";
 // import * as mySvg from "@/alphabet.svg";
 
@@ -89,7 +90,7 @@ export default {
     };
   },
   mounted() {
-    setTimeout(this.onLoaded, 2000)
+    setTimeout(this.onLoaded, 2000);
   },
   methods: {
     onLoaded() {
@@ -105,6 +106,7 @@ export default {
       // tl.to("#triangle", 0.3, {morphSVG:"#a"})
       //   .to("#square", 0.3, {morphSVG:"#b"})
       //   .to("#circle", 0.3, {morphSVG:"#c"})
+      const ourSvg = SVG("#alphabet");
 
       console.log(
         "🚀 ~ file: Alphabet.vue ~ line 40 ~ onLoaded ~ MorphSVGPlugin",
@@ -112,7 +114,6 @@ export default {
       );
 
       MorphSVGPlugin.convertToPath("circle, #square, #triangle");
-      debugger;
       var tl = gsap.timeline({
         repeat: 20,
         // repeatDelay: 0.3,
@@ -125,6 +126,15 @@ export default {
         .to("#square", { morphSVG: "#b" })
         .to("#circle", { morphSVG: "#c" })
         .timeScale(3);
+
+      console.log("dvdb - onLoaded - ourSvg", ourSvg);
+      ourSvg
+        .animate({
+          delay: 100,
+        })
+        .attr({
+          opacity: 0.5,
+        });
     },
   },
 };
