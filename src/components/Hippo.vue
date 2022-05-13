@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hippo">
     <inline-svg :src="mySvg" @loaded="onLoaded"></inline-svg>
   </div>
 </template>
@@ -8,13 +8,12 @@
 import { gsap } from "gsap";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 import InlineSvg from "vue-inline-svg";
-import * as mySvg from "@/star.svg";
+import * as mySvg from "@/hippo.svg";
 
 gsap.registerPlugin(MorphSVGPlugin);
-console.log("🚀 ~ file: HelloWorld.vue ~ line 38 ~ gsap", gsap);
 
 export default {
-  name: "HelloWorld",
+  name: "Hippo",
   components: { InlineSvg },
   props: {
     msg: String,
@@ -22,19 +21,15 @@ export default {
   data() {
     return {
       mySvg,
-      svgHasLoaded: false
+      svgHasLoaded: false,
     };
   },
   methods: {
     onLoaded() {
       this.svgHasLoaded = true;
-      // gsap.to("#square", {
-      //   duration: 3,
-      //   morphSVG: { shape: "#star", shapeIndex: 7 },
-      // });
-      gsap.to("#square", 2, {morphSVG:"#star", shapeIndex: 5})
-    }
-  }
+      gsap.to("#elephant", {duration: 4, morphSVG:"#hippo"})
+    },
+  },
 };
 </script>
 
@@ -61,11 +56,6 @@ a {
   stroke-miterlimit: 10;
 }
 .st1 {
-  fill: #88c540;
-}
-.st2 {
-  fill: none;
-  stroke: #e5285d;
-  stroke-miterlimit: 10;
+  fill: #cccccc;
 }
 </style>
